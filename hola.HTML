@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mural Digital: Día Mundial del Libro</title>
+    <!-- Tailwind CSS para el diseño rápido y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fuentes de Google: Lora para literatura, Poppins para interfaz -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome para íconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Lora', 'serif'],
+                        'sans': ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-dark': '#1e293b',
+                        'brand-primary': '#4f46e5',
+                        'brand-accent': '#f43f5e',
+                        'brand-light': '#f8fafc',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #f1f5f9; background-image: radial-gradient(#cbd5e1 1px, transparent 1px); background-size: 30px 30px; }
+        .mural-card { transition: all 0.3s ease; }
+        .mural-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        .quote-mark { font-size: 4rem; line-height: 0; color: #cbd5e1; position: absolute; top: 30px; left: 10px; z-index: 0; opacity: 0.5; }
+        .card-content { position: relative; z-index: 1; }
+        
+        /* Animación suave al cargar */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.8s ease-out forwards; opacity: 0; }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+    </style>
+</head>
+<body class="font-sans text-gray-800 antialiased min-h-screen pb-12">
+
+    <!-- Encabezado del Mural -->
+    <header class="bg-gradient-to-r from-brand-primary to-purple-600 text-white py-16 px-6 shadow-xl mb-12 rounded-b-[3rem] relative overflow-hidden">
+        <div class="absolute inset-0 bg-black opacity-10"></div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold font-serif mb-4 drop-shadow-md">
+                <i class="fa-solid fa-book-open-reader mr-3"></i>Mural Literario Digital
+            </h1>
+            <p class="text-xl md:text-2xl font-light mb-6">Celebrando el Día Mundial del Libro y del Derecho de Autor</p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-medium">
+                <span class="bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm"><i class="fa-solid fa-brain mr-2"></i>Lectura Comprensiva</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm"><i class="fa-solid fa-palette mr-2"></i>Creatividad</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full backdrop-blur-sm"><i class="fa-solid fa-laptop-code mr-2"></i>Tecnología Responsable</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal (Grid del Mural) -->
+    <main class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- TARJETA 1: Cien años de soledad -->
+        <article class="mural-card bg-white rounded-3xl p-8 shadow-lg border border-gray-100 relative overflow-hidden animate-fade-in delay-1 flex flex-col h-full">
+            <div class="quote-mark">"</div>
+            <div class="card-content flex-grow">
+                <span class="inline-block px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs font-bold tracking-wider mb-4 uppercase">Realismo Mágico</span>
+                <h2 class="text-2xl font-bold font-serif text-brand-dark mb-2">Cien Años de Soledad</h2>
+                <p class="text-sm text-gray-500 mb-4 italic">Gabriel García Márquez</p>
+                
+                <blockquote class="text-lg font-serif text-gray-700 italic border-l-4 border-yellow-400 pl-4 mb-6">
+                    "El mundo era tan reciente, que muchas cosas carecían de nombre, y para mencionarlas había que señalarlas con el dedo."
+                </blockquote>
+                
+                <div class="mb-6">
+                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-2"><i class="fa-solid fa-pen-nib mr-2"></i>Nuestra Reseña</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Una obra maestra que nos sumerge en la historia de la familia Buendía. Nos enseña cómo la memoria, el tiempo y las emociones se entrelazan. Su lectura nos ha permitido expandir nuestra imaginación y comprender la riqueza de la identidad latinoamericana.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Sección QR -->
+            <div class="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-brand-primary mb-1">RECURSO DIGITAL</p>
+                    <p class="text-xs text-gray-500">Escanea para escuchar el<br><strong>Audiolibro introductorio</strong></p>
+                </div>
+                <a href="https://es.wikipedia.org/wiki/Cien_a%C3%B1os_de_soledad" target="_blank" class="block border-2 border-brand-primary rounded-lg p-1 hover:scale-105 transition-transform" title="Haz clic o escanea">
+                    <!-- Usando QR Code API -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://es.wikipedia.org/wiki/Cien_a%C3%B1os_de_soledad&color=4f46e5" alt="Código QR Cien años de soledad" class="w-16 h-16">
+                </a>
+            </div>
+        </article>
+
+        <!-- TARJETA 2: Fahrenheit 451 -->
+        <article class="mural-card bg-white rounded-3xl p-8 shadow-lg border border-gray-100 relative overflow-hidden animate-fade-in delay-2 flex flex-col h-full">
+            <div class="quote-mark" style="color: #fee2e2;">"</div>
+            <div class="card-content flex-grow">
+                <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-bold tracking-wider mb-4 uppercase">Distopía / Reflexión</span>
+                <h2 class="text-2xl font-bold font-serif text-brand-dark mb-2">Fahrenheit 451</h2>
+                <p class="text-sm text-gray-500 mb-4 italic">Ray Bradbury</p>
+                
+                <blockquote class="text-lg font-serif text-gray-700 italic border-l-4 border-brand-accent pl-4 mb-6">
+                    "No hace falta quemar libros si el mundo empieza a llenarse de gente que no lee, que no aprende, que no sabe."
+                </blockquote>
+                
+                <div class="mb-6">
+                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-2"><i class="fa-solid fa-pen-nib mr-2"></i>Nuestra Reseña</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Este libro es una advertencia brillante. Nos hace cuestionar nuestro consumo pasivo de pantallas frente a la lectura activa. Valoramos este texto porque resalta que la lectura crítica es nuestra mayor defensa contra la ignorancia y la manipulación.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Sección QR -->
+            <div class="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-brand-accent mb-1">RECURSO DIGITAL</p>
+                    <p class="text-xs text-gray-500">Escanea para ver un<br><strong>Video de análisis literario</strong></p>
+                </div>
+                <a href="https://es.wikipedia.org/wiki/Fahrenheit_451" target="_blank" class="block border-2 border-brand-accent rounded-lg p-1 hover:scale-105 transition-transform" title="Haz clic o escanea">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://es.wikipedia.org/wiki/Fahrenheit_451&color=f43f5e" alt="Código QR Fahrenheit" class="w-16 h-16">
+                </a>
+            </div>
+        </article>
+
+        <!-- TARJETA 3: El Principito -->
+        <article class="mural-card bg-white rounded-3xl p-8 shadow-lg border border-gray-100 relative overflow-hidden animate-fade-in delay-3 flex flex-col h-full">
+            <div class="quote-mark" style="color: #e0f2fe;">"</div>
+            <div class="card-content flex-grow">
+                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold tracking-wider mb-4 uppercase">Filosofía / Cuento</span>
+                <h2 class="text-2xl font-bold font-serif text-brand-dark mb-2">El Principito</h2>
+                <p class="text-sm text-gray-500 mb-4 italic">Antoine de Saint-Exupéry</p>
+                
+                <blockquote class="text-lg font-serif text-gray-700 italic border-l-4 border-blue-400 pl-4 mb-6">
+                    "Solo con el corazón se puede ver bien; lo esencial es invisible a los ojos."
+                </blockquote>
+                
+                <div class="mb-6">
+                    <h3 class="font-bold text-sm text-gray-900 uppercase tracking-wider mb-2"><i class="fa-solid fa-pen-nib mr-2"></i>Nuestra Reseña</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Un relato engañosamente infantil que esconde profundas verdades sobre la amistad, el amor y la pérdida de la inocencia. Al leerlo, comprendimos la importancia de cuidar nuestros vínculos y de no perder la capacidad de asombro ante el mundo.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Sección QR -->
+            <div class="mt-auto pt-6 border-t border-gray-100 flex items-center justify-between">
+                <div>
+                    <p class="text-xs font-bold text-blue-500 mb-1">RECURSO DIGITAL</p>
+                    <p class="text-xs text-gray-500">Escanea para escuchar<br><strong>Lectura Dramatizada</strong></p>
+                </div>
+                <a href="https://es.wikipedia.org/wiki/El_principito" target="_blank" class="block border-2 border-blue-400 rounded-lg p-1 hover:scale-105 transition-transform" title="Haz clic o escanea">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://es.wikipedia.org/wiki/El_principito&color=3b82f6" alt="Código QR El Principito" class="w-16 h-16">
+                </a>
+            </div>
+        </article>
+
+        <!-- TARJETA 4: Infografía Canva / Uso Responsable -->
+        <article class="mural-card bg-gradient-to-br from-indigo-50 to-purple-100 rounded-3xl p-8 shadow-lg border border-indigo-200 relative overflow-hidden animate-fade-in delay-4 col-span-1 md:col-span-2 lg:col-span-2 flex flex-col justify-center">
+            <div class="flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1">
+                    <span class="inline-block px-3 py-1 bg-indigo-600 text-white rounded-full text-xs font-bold tracking-wider mb-4 uppercase"><i class="fa-solid fa-shield-halved mr-2"></i>Manifiesto Digital</span>
+                    <h2 class="text-3xl font-bold font-sans text-indigo-900 mb-4">Uso Responsable de la Tecnología</h2>
+                    <p class="text-indigo-800 mb-4 font-medium">La tecnología debe ser un puente hacia el conocimiento, no un muro que nos aísle.</p>
+                    <ul class="space-y-3 text-sm text-indigo-700">
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2"></i> <strong>Crear, no solo consumir:</strong> Usamos herramientas como Canva y Google Sites para diseñar infografías y construir conocimiento, en lugar de solo hacer scroll pasivo.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2"></i> <strong>Lectura Híbrida:</strong> Combinamos el placer del libro en papel con la interactividad de los Códigos QR para expandir la experiencia literaria.</li>
+                        <li class="flex items-start"><i class="fa-solid fa-check-circle text-indigo-500 mt-1 mr-2"></i> <strong>Veracidad:</strong> Verificamos nuestras fuentes antes de compartir reseñas y opiniones en nuestros murales digitales.</li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3 bg-white p-6 rounded-2xl shadow-inner text-center">
+                    <i class="fa-solid fa-mobile-screen text-4xl text-indigo-400 mb-3"></i>
+                    <h3 class="font-bold text-indigo-900 mb-2">Desafío Literario</h3>
+                    <p class="text-xs text-gray-500 mb-4">Escanea el QR para participar en nuestro juego interactivo online de trivia sobre libros.</p>
+                    <a href="https://es.wikipedia.org/wiki/D%C3%ADa_Mundial_del_Libro_y_del_Derecho_de_Autor" target="_blank" class="inline-block p-1 bg-white border border-gray-200 rounded-lg hover:shadow-md transition-shadow">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://es.wikipedia.org/wiki/D%C3%ADa_Mundial_del_Libro_y_del_Derecho_de_Autor&color=312e81" alt="QR Desafío" class="w-24 h-24 mx-auto">
+                    </a>
+                </div>
+            </div>
+        </article>
+
+        <!-- TARJETA 5: Rincón Creativo -->
+        <article class="mural-card bg-gray-900 text-white rounded-3xl p-8 shadow-lg border border-gray-800 relative overflow-hidden animate-fade-in delay-4 flex flex-col h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]">
+            <div class="card-content flex-grow text-center flex flex-col items-center justify-center">
+                <div class="w-16 h-16 bg-brand-accent rounded-full flex items-center justify-center mb-6 shadow-[0_0_20px_rgba(244,63,94,0.5)]">
+                    <i class="fa-solid fa-lightbulb text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold font-serif mb-4">Tu Turno de Crear</h2>
+                <p class="text-sm text-gray-300 mb-6">
+                    La lectura alimenta la imaginación. Te invitamos a dejar de ser solo un lector y convertirte en autor. Escribe un <strong>microcuento de 50 palabras</strong>.
+                </p>
+                
+                <a href="#" class="bg-white text-gray-900 px-6 py-3 rounded-full font-bold text-sm hover:bg-gray-200 transition-colors inline-flex items-center" onclick="mostrarMensaje(event)">
+                    <i class="fa-solid fa-keyboard mr-2"></i> Escribir ahora
+                </a>
+            </div>
+            
+            <!-- Modal/Mensaje simple dentro del contenedor -->
+            <div id="mensaje-creativo" class="hidden absolute inset-0 bg-brand-primary flex-col items-center justify-center p-6 text-center z-20">
+                <i class="fa-solid fa-check-circle text-4xl mb-4 text-green-300"></i>
+                <h3 class="font-bold text-xl mb-2">¡Muro Abierto!</h3>
+                <p class="text-sm mb-6">En un proyecto real, este botón abriría un formulario de Google o un tablero digital (como Padlet) integrado en este sitio para recopilar los cuentos de los estudiantes.</p>
+                <button onclick="ocultarMensaje(event)" class="px-4 py-2 bg-white text-brand-primary rounded-full text-xs font-bold">Volver al Mural</button>
+            </div>
+        </article>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="max-w-7xl mx-auto px-6 mt-16 text-center text-gray-500 text-sm">
+        <p>© 2026 Proyecto Escolar - Día Mundial del Libro. Diseñado con simulaciones de Canvas y Google Sites.</p>
+        <p class="mt-2 text-xs">Los códigos QR generados son funcionales. Haz clic en ellos o escanéalos con tu celular.</p>
+    </footer>
+
+    <script>
+        // Funciones simples para la interactividad de la tarjeta creativa
+        function mostrarMensaje(e) {
+            e.preventDefault();
+            document.getElementById('mensaje-creativo').style.display = 'flex';
+        }
+        
+        function ocultarMensaje(e) {
+            e.preventDefault();
+            document.getElementById('mensaje-creativo').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
